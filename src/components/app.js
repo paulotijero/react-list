@@ -2,13 +2,13 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 
-import { Content, Action, Main } from "./helpers";
+import { Content } from "./helpers";
+import Home from "../views/home";
 
 function App() {
   return (
     <Content>
-      <Action />
-      <Main />
+      <Home />
     </Content>
   );
 }

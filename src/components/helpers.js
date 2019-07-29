@@ -25,7 +25,8 @@ function Action({ styles, ...props }) {
     <section
       {...props}
       css={{
-        gridArea: "actions"
+        gridArea: "actions",
+        ...styles
       }}
     />
   );
@@ -36,7 +37,8 @@ function Main({ styles, ...props }) {
     <section
       {...props}
       css={{
-        gridArea: "main"
+        gridArea: "main",
+        ...styles
       }}
     />
   );
