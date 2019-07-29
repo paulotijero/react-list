@@ -4,13 +4,12 @@ import { jsx } from "@emotion/core";
 function Search({ styles, ...props }) {
   return (
     <div
+      {...props}
       css={{
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
         height: "40px",
-        width: "90%",
-        margin: "0 auto",
         border: "2px solid #c4c4c4",
         borderRadius: "5px",
         svg: {
@@ -31,8 +30,11 @@ function Search({ styles, ...props }) {
             color: "#c4c4c4"
           },
           "@media (max-width: 768px)": {
-            backgroundColor: "#F2F3F5"
+            backgroundColor: "#fff"
           }
+        },
+        "@media (max-width: 768px)": {
+          backgroundColor: "#fff"
         },
         ...styles
       }}
@@ -45,4 +47,59 @@ function Search({ styles, ...props }) {
   );
 }
 
-export { Card, Search };
+function Button({ styles, ...props }) {
+  return (
+    <button
+      {...props}
+      css={{
+        width: "calc(100% / 4)",
+        height: "40px",
+        margin: "0px",
+        border: "none",
+        borderTop: "2px solid #C4C4C4",
+        borderBottom: "2px solid #C4C4C4",
+        borderLeft: "2px solid #c4c4c4",
+        fontWeight: "bold",
+        fontSize: "12px",
+        letterSpacing: "0.1em",
+        color: "#C4C4C4",
+        backgroundColor: "#F2F3F5",
+        transition: "all 0.25s",
+        ":first-of-type": {
+          borderTopLeftRadius: "5px",
+          borderBottomLeftRadius: "5px"
+        },
+        ":last-child": {
+          borderRight: "2px solid #c4c4c4",
+          borderTopRightRadius: "5px",
+          borderBottomRightRadius: "5px"
+        },
+        ":hover": {
+          cursor: "pointer",
+          border: "2px solid #E67E22"
+        },
+        "@media (max-width: 768px)": {
+          backgroundColor: "#fff"
+        },
+        ...styles
+      }}
+    />
+  );
+}
+
+function Label({ styles, ...props }) {
+  return (
+    <label
+      {...props}
+      css={{
+        margin: "10px 0",
+        fontWeight: "bold",
+        fontSize: "13px",
+        letterSpacing: "0.1em",
+        color: "#8E8E8E"
+      }}
+    />
+  );
+}
+
+export { Search, Button, Label };
