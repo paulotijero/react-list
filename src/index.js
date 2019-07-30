@@ -4,6 +4,7 @@ import { render } from "react-dom";
 import { Global, jsx } from "@emotion/core";
 
 import App from "./components/app";
+import { DataProvider } from "./contexts/data";
 
 const $root = document.getElementById("root");
 
@@ -17,7 +18,9 @@ render(
         }
       }}
     />
-    <App />
+    <DataProvider>
+      <App />
+    </DataProvider>
   </>,
   $root
 );
