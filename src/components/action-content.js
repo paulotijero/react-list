@@ -5,6 +5,7 @@ import { jsx } from "@emotion/core";
 import { Action } from "./helpers";
 import { Search, Button, Label } from "./ui";
 import Footer from "./footer";
+import { DataContext } from "../contexts/data";
 
 const container = {
   padding: "0 30px",
@@ -30,10 +31,12 @@ const buttonContent = {
 };
 
 function ActionContent() {
+  const contextType = React.useContext(DataContext);
+
   return (
     <Action css={container}>
       <Footer />
-      <Search css={search} />
+      <Search css={search} onKeyDown={contextType.handleKey} />
       <Label>Gender</Label>
       <div css={buttonContent}>
         <Button>Genderless</Button>

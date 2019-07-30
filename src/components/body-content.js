@@ -11,7 +11,6 @@ const container = {
 
 function BodyContent() {
   const contextType = React.useContext(DataContext);
-  console.log(contextType.results);
 
   return (
     <Main css={container}>
