@@ -2,8 +2,9 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 
-import { Action } from "../components/helpers";
-import { Search, Button, Label } from "../components/ui";
+import { Action } from "./helpers";
+import { Search, Button, Label } from "./ui";
+import Footer from "./footer";
 
 const container = {
   padding: "0 30px",
@@ -31,6 +32,7 @@ const buttonContent = {
 function ActionContent() {
   return (
     <Action css={container}>
+      <Footer />
       <Search css={search} />
       <Label>Gender</Label>
       <div css={buttonContent}>
