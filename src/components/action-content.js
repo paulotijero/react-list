@@ -5,6 +5,7 @@ import { jsx } from "@emotion/core";
 import { Action } from "./helpers";
 import { Search, Button, Label } from "./ui";
 import Footer from "./footer";
+import { DataContext } from "../contexts/data";
 
 const container = {
   padding: "0 30px",
@@ -30,22 +31,50 @@ const buttonContent = {
 };
 
 function ActionContent() {
+  const contextType = React.useContext(DataContext);
+
   return (
     <Action css={container}>
       <Footer />
-      <Search css={search} />
+      <Search css={search} onKeyDown={contextType.handleKey} />
       <Label>Gender</Label>
       <div css={buttonContent}>
-        <Button>Genderless</Button>
-        <Button>Male</Button>
-        <Button>Female</Button>
-        <Button>Unknown</Button>
+        <Button
+          onClick={contextType.handleButton}
+          name="gender"
+          value="genderless"
+        >
+          Genderless
+        </Button>
+        <Button onClick={contextType.handleButton} name="gender" value="male">
+          Male
+        </Button>
+        <Button onClick={contextType.handleButton} name="gender" value="female">
+          Female
+        </Button>
+        <Button
+          onClick={contextType.handleButton}
+          name="gender"
+          value="unknown"
+        >
+          Unknown
+        </Button>
       </div>
       <Label>Status</Label>
       <div css={buttonContent}>
-        <Button>Alive</Button>
-        <Button>Dead</Button>
-        <Button>Unknown</Button>
+        <Button onClick={contextType.handleButton} name="status" value="alive">
+          Alive
+        </Button>
+        <Button onClick={contextType.handleButton} name="status" value="dead">
+          Dead
+        </Button>
+        <Button
+          onClick={contextType.handleButton}
+          name="status"
+          value="unknown"
+        >
+          Unknown
+        </Button>
       </div>
     </Action>
   );
