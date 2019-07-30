@@ -20,27 +20,24 @@ function DataProvider(props) {
     findCharacters(filter).then(list => setData(list));
   }, [filter]);
 
-  function handleKey(event) {
-    if (event.keyCode >= 65 && event.keyCode <= 90) {
+  function handleChange(event) {
+    if (filter[event.target.name] === event.target.value) {
       setFilter({
         ...filter,
-        name: filter.name + String.fromCharCode(event.keyCode)
+        [event.target.name]: ""
       });
-    } else if (event.keyCode === 8 && filter.name.length !== 0) {
-      setFilter({ ...filter, name: filter.name.slice(0, -1) });
+    } else {
+      setFilter({
+        ...filter,
+        [event.target.name]: event.target.value
+      });
     }
-  }
-
-  function handleButton(event) {
-    event.preventDefault();
-    setFilter({ ...filter, [event.target.name]: event.target.value });
   }
 
   const value = {
     info: data.info,
     results: data.results,
-    handleKey: handleKey,
-    handleButton: handleButton
+    handleChange: handleChange
   };
 
   return <DataContext.Provider value={value} {...props} />;
