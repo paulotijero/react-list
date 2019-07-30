@@ -8,7 +8,15 @@ async function allCharacters() {
 }
 
 async function findCharacters(value) {
-  const list = await fetch(API_ALL_CHARACTERS + "?name=" + value, {
+  let API_FIND =
+    API_ALL_CHARACTERS +
+    "?name=" +
+    value.name +
+    "&status=" +
+    value.status +
+    "&gender=" +
+    value.gender;
+  const list = await fetch(API_FIND, {
     method: "GET"
   }).then(response => response.json());
   return list;
