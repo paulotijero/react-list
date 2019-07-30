@@ -36,24 +36,24 @@ function ActionContent() {
   return (
     <Action css={container}>
       <Footer />
-      <Search css={search} onKeyDown={contextType.handleKey} />
+      <Search css={search} name="name" onChange={contextType.handleChange} />
       <Label>Gender</Label>
       <div css={buttonContent}>
         <Button
-          onClick={contextType.handleButton}
+          onClick={contextType.handleChange}
           name="gender"
           value="genderless"
         >
           Genderless
         </Button>
-        <Button onClick={contextType.handleButton} name="gender" value="male">
+        <Button onClick={contextType.handleChange} name="gender" value="male">
           Male
         </Button>
-        <Button onClick={contextType.handleButton} name="gender" value="female">
+        <Button onClick={contextType.handleChange} name="gender" value="female">
           Female
         </Button>
         <Button
-          onClick={contextType.handleButton}
+          onClick={contextType.handleChange}
           name="gender"
           value="unknown"
         >
@@ -62,14 +62,14 @@ function ActionContent() {
       </div>
       <Label>Status</Label>
       <div css={buttonContent}>
-        <Button onClick={contextType.handleButton} name="status" value="alive">
+        <Button onClick={contextType.handleChange} name="status" value="alive">
           Alive
         </Button>
-        <Button onClick={contextType.handleButton} name="status" value="dead">
+        <Button onClick={contextType.handleChange} name="status" value="dead">
           Dead
         </Button>
         <Button
-          onClick={contextType.handleButton}
+          onClick={contextType.handleChange}
           name="status"
           value="unknown"
         >
