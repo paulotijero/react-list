@@ -7,21 +7,32 @@ import { Card } from "../components/ui";
 import { DataContext } from "../contexts/data";
 
 const container = {
+  display: "flex",
+  flexWrap: "wrap",
   backgroundColor: "#F2F3F5",
   "@media (max-width: 768px)": {
+    display: "block",
     padding: "0 11px"
   }
 };
 
 const imgContainer = {
-  width: "100px",
+  width: "100%",
+  height: "210px",
   position: "relative",
   img: {
     height: "100%",
     width: "100%",
     objectFit: "cover",
     position: "absolute",
-    borderRadius: "5px 0 0 5px"
+    borderRadius: "5px 5px 0 0"
+  },
+  "@media (max-width: 768px)": {
+    width: "100px",
+    height: "unset",
+    img: {
+      borderRadius: "5px 0 0 5px"
+    }
   }
 };
 

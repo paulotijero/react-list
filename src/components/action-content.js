@@ -18,10 +18,14 @@ const container = {
 };
 
 const buttonContent = {
+  margin: "15px 0 35px 0",
   ":last-child": {
     button: {
       width: "calc(100% / 3)"
     }
+  },
+  "@media (max-width: 768px)": {
+    margin: "5px 0"
   }
 };
 
