@@ -17,12 +17,7 @@ const container = {
   }
 };
 
-const search = {
-  margin: "10px 0"
-};
-
 const buttonContent = {
-  margin: "10px 0",
   ":last-child": {
     button: {
       width: "calc(100% / 3)"
@@ -36,7 +31,7 @@ function ActionContent() {
   return (
     <Action css={container}>
       <Footer />
-      <Search css={search} name="name" onChange={contextType.handleChange} />
+      <Search name="name" onChange={contextType.handleChange} />
       <Label>Gender</Label>
       <div css={buttonContent}>
         <Button

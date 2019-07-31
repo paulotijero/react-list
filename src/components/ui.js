@@ -102,4 +102,23 @@ function Label({ styles, ...props }) {
   );
 }
 
-export { Search, Button, Label };
+function Card({ styles, ...props }) {
+  return (
+    <div
+      {...props}
+      css={{
+        display: "flex",
+        justifyContent: "space-between",
+        margin: "15px 0",
+        padding: "0",
+        borderRadius: "5px",
+        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.12)",
+        backgroundColor: "#fff",
+        transition: "all 0.25s",
+        ...styles
+      }}
+    />
+  );
+}
+
+export { Search, Button, Label, Card };

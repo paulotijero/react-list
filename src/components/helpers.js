@@ -11,7 +11,7 @@ function Content({ styles, ...props }) {
         gridTemplate: "1fr / 450px 1fr",
         gridTemplateAreas: "'actions main'",
         "@media (max-width: 768px)": {
-          gridTemplate: "250px 1fr / 1fr",
+          gridTemplate: "210px 1fr / 1fr",
           gridTemplateAreas: "'actions' 'main'"
         },
         ...styles
@@ -38,6 +38,8 @@ function Main({ styles, ...props }) {
       {...props}
       css={{
         gridArea: "main",
+        height: "calc(210px - 1fr)",
+        overflow: "auto",
         ...styles
       }}
     />
