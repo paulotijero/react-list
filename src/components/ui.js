@@ -9,6 +9,7 @@ function Search({ styles, ...props }) {
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
+        margin: "35px 0",
         height: "40px",
         border: "2px solid #c4c4c4",
         borderRadius: "5px",
@@ -34,6 +35,7 @@ function Search({ styles, ...props }) {
           }
         },
         "@media (max-width: 768px)": {
+          margin: "10px 0",
           backgroundColor: "#fff"
         },
         ...styles
@@ -92,7 +94,6 @@ function Label({ styles, ...props }) {
     <label
       {...props}
       css={{
-        margin: "10px 0",
         fontWeight: "bold",
         fontSize: "13px",
         letterSpacing: "0.1em",
@@ -102,4 +103,30 @@ function Label({ styles, ...props }) {
   );
 }
 
-export { Search, Button, Label };
+function Card({ styles, ...props }) {
+  return (
+    <div
+      {...props}
+      css={{
+        width: "30%",
+        height: "330px",
+        margin: "10px 16px",
+        padding: "0",
+        borderRadius: "5px",
+        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.12)",
+        backgroundColor: "#fff",
+        transition: "all 0.25s",
+        "@media (max-width: 768px)": {
+          display: "flex",
+          justifyContent: "space-between",
+          width: "100%",
+          margin: "15px 0",
+          height: "unset"
+        },
+        ...styles
+      }}
+    />
+  );
+}
+
+export { Search, Button, Label, Card };
