@@ -37,6 +37,7 @@ function DataProvider(props) {
   const value = {
     info: data.info,
     results: data.results,
+    filter: filter,
     handleChange: handleChange
   };
 

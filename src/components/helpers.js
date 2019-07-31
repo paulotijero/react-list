@@ -40,7 +40,7 @@ function Main({ styles, ...props }) {
         gridArea: "main",
         overflow: "auto",
         "@media (max-width: 768px)": {
-          height: "calc(210px - 1fr)"
+          height: "calc(235px - 1fr)"
         },
         ...styles
       }}
