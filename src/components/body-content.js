@@ -91,7 +91,7 @@ function BodyContent() {
       {contextType.results &&
         contextType.results.map((e, i) => {
           return (
-            <Card>
+            <Card key={i}>
               <div css={imgContainer}>
                 <img src={e.image} alt={e.name} />
               </div>

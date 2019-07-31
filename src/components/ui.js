@@ -56,32 +56,58 @@ function Button({ styles, ...props }) {
       css={{
         width: "calc(100% / 4)",
         height: "40px",
-        margin: "0px",
-        border: "none",
-        borderTop: "2px solid #C4C4C4",
-        borderBottom: "2px solid #C4C4C4",
-        borderLeft: "2px solid #c4c4c4",
+        margin: "0",
+        border: "2px solid #C4C4C4",
+        borderRight: "0",
         fontWeight: "bold",
         fontSize: "12px",
         letterSpacing: "0.1em",
         color: "#C4C4C4",
         backgroundColor: "#F2F3F5",
         transition: "all 0.25s",
+        position: "relative",
+        cursor: "pointer",
+        ":focus": {
+          outline: "none"
+        },
         ":first-of-type": {
+          marginLeft: "0",
           borderTopLeftRadius: "5px",
-          borderBottomLeftRadius: "5px"
+          borderBottomLeftRadius: "5px",
+          ":after": {
+            borderTopLeftRadius: "5px",
+            borderBottomLeftRadius: "5px"
+          }
         },
         ":last-child": {
           borderRight: "2px solid #c4c4c4",
           borderTopRightRadius: "5px",
-          borderBottomRightRadius: "5px"
+          borderBottomRightRadius: "5px",
+          ":after": {
+            borderTopRightRadius: "5px",
+            borderBottomRightRadius: "5px"
+          }
         },
-        ":hover": {
-          cursor: "pointer",
-          border: "2px solid #E67E22"
+        ":hover:after": {
+          opacity: 1
+        },
+        ":after": {
+          content: "''",
+          position: "absolute",
+          left: "-2px",
+          right: "-2px",
+          bottom: "-2px",
+          top: "-2px",
+          border: "2px solid #E67E22",
+          opacity: 0,
+          zIndex: 1,
+          transition: "all 0.25s"
         },
         "@media (max-width: 768px)": {
-          backgroundColor: "#fff"
+          backgroundColor: "#fff",
+          ":after": {
+            border: "0px"
+          }
         },
         ...styles
       }}
