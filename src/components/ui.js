@@ -134,6 +134,8 @@ function Card({ styles, ...props }) {
     <div
       {...props}
       css={{
+        minWidth: "300px",
+        maxWidth: "310px",
         width: "30%",
         height: "330px",
         margin: "10px 16px",
@@ -143,9 +145,11 @@ function Card({ styles, ...props }) {
         backgroundColor: "#fff",
         transition: "all 0.25s",
         "@media (max-width: 768px)": {
+          width: "100%",
+          minWidth: "unset",
+          maxWidth: "unset",
           display: "flex",
           justifyContent: "space-between",
-          width: "100%",
           margin: "15px 0",
           height: "unset"
         },
