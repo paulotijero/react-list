@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/983530e9-a9fb-4cd8-9a14-97f0bd08bc52/deploy-status)](https://app.netlify.com/sites/react-rick-morty/deploys)
 
-You can find your favourite Rick and Morty character
+You can find your favorite Rick and Morty character
 
 ![](/public/react-list.gif)
 
