@@ -9,7 +9,7 @@ import { DataProvider } from "./contexts/data";
 const $root = document.getElementById("root");
 
 render(
-  <>
+  <React.Fragment>
     <Global
       styles={{
         body: {
@@ -21,6 +21,6 @@ render(
     <DataProvider>
       <App />
     </DataProvider>
-  </>,
+  </React.Fragment>,
   $root
 );
